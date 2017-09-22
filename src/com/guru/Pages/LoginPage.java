@@ -38,6 +38,12 @@ public class LoginPage {
 		}
 
 	}
+	
+	
+	public static void to_be_removed()
+	{
+		System.out.println("Remove");
+	}
 
 	public static void userLoginTest(String user, String pass) throws Exception {
 
