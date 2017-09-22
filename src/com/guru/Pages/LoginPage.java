@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.guru.Config.BrowserConfig;
+import com.guru.Config.ExcelUtill;
 import com.guru.Config.Utill;
 import static com.guru.Config.BrowserConfig.driver;
 
@@ -46,6 +47,7 @@ public class LoginPage {
 	}
 
 	public static void userLoginTest(String user, String pass) throws Exception {
+		int i=0;
 
 		driver.findElement(By.xpath(TxtBox_UserName)).sendKeys(user);
 		driver.findElement(By.xpath(TxtBox_Password)).sendKeys(pass);
@@ -61,6 +63,7 @@ public class LoginPage {
 			if(invalidAlertText.equalsIgnoreCase(Utill.Expected_Login_Error))
 			{
 				System.out.println("FAIL: Invalid User : " +user);
+				ExcelUtill.setCallData("Data", i, Utill.Col_dataResult, "FAIL");
 			}
 			else
 			{
@@ -72,6 +75,7 @@ public class LoginPage {
 			if(driver.findElement(By.xpath(Link_Logout)).isDisplayed())
 			{
 				System.out.println("PASS:  Valid User: " + user);
+				ExcelUtill.setCallData("Data", i, Utill.Col_dataResult, "PASS");
 			}
          	driver.findElement(By.xpath(Link_Logout)).click();
 			Thread.sleep(5000);

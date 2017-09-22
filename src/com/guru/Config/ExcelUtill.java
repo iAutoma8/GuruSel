@@ -3,6 +3,8 @@ package com.guru.Config;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -39,5 +41,36 @@ public class ExcelUtill {
 		return rowNum;
 
 	}
+	
+	
+	public static void setCallData(String sheetName,int rows,int col,String data) throws Exception
+	{
+		
+		
+		sh=wb.getSheet(sheetName);
+		row=sh.getRow(rows);
+		cell=row.getCell(col);
+		
+		if(cell==null)
+		{
+			cell=row.createCell(col);
+			cell.setCellValue(data);
+		}
+		
+		else
+		{
+			cell.setCellValue(data);
+		}
+		
+		
+		FileOutputStream fout=new FileOutputStream(Utill.path_TestData);
+		wb.write(fout);
+		
+	}
+	
+	
+	
+	
+	
 
 }

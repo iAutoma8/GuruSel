@@ -8,6 +8,7 @@ public class Utill {
 	public static final String Password="tudEbEq";
 	public static final String Expected_Login_Error="User or Password is not valid";
 	public static final String path_TestData="D:\\MyWork\\Guru\\TestData.xlsx";
+	public static final int Col_dataResult= 2;
 	
 
 }

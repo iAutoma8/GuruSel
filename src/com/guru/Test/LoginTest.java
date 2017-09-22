@@ -18,6 +18,7 @@ public class LoginTest extends BrowserConfig {
 		// LoginPage.Login();
 
 		ExcelUtill.setExcel(Utill.path_TestData);
+		//ExcelUtill.setCallData("Data", 2, Utill.Col_dataResult, "Enter");
 
 		for (int i = 1; i < ExcelUtill.getRowNum("Data"); i++) {
 
@@ -26,6 +27,6 @@ public class LoginTest extends BrowserConfig {
 			LoginPage.userLoginTest(user, pass);
 
 		}
+	
 	}
-
 }
