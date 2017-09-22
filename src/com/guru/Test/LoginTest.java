@@ -16,13 +16,13 @@ public class LoginTest extends BrowserConfig {
 		BrowserConfig.launchBrowser();
 		LoginPage.launchSite();
 		// LoginPage.Login();
-		
+
 		ExcelUtill.setExcel(Utill.path_TestData);
 
 		for (int i = 1; i < ExcelUtill.getRowNum("Data"); i++) {
 
-			String user=ExcelUtill.getCellData(i, 0, "Data");
-			String pass=ExcelUtill.getCellData(i, 1, "Data");
+			String user = ExcelUtill.getCellData(i, 0, "Data");
+			String pass = ExcelUtill.getCellData(i, 1, "Data");
 			LoginPage.userLoginTest(user, pass);
 
 		}
