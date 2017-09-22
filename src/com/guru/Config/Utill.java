@@ -7,5 +7,7 @@ public class Utill {
 	public static final String UserName="mngr97898";
 	public static final String Password="tudEbEq";
 	
+	public static final String path_TestData="D:\\MyWork\\Guru\\TestData.xlsx";
+	
 
 }
